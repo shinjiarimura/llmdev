@@ -38,7 +38,7 @@ form{
   margin-top: 20px; /* 上部に余白を追加 */
 }
 
-input[text="text"]{
+input[type="text"]{
   flex: 1; /* 入力フィールドをできる限り広げる */
   padding: 8px; /* 入力フィールドの内側余白を設定 */
   border: 1px solid #ccc; /* 枠線を薄いグレーに設定 */

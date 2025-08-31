@@ -30,18 +30,12 @@ def index():
 
 @app.route("/delete/<int:todo_id>")
 def delete(todo_id):
-        try:
-            with open("todos.txt", "r") as file:
-                todos = [line.strip() for line in file]
-                todos.pop(todo_id)
-                save_todos(todos)
-        except FileNotFoundError:
-            todos = []
-        except:
-            todos = []
-        
+        # 課題で実装します。
         todos = load_todos()
-        return render_template("index.html", todos=todos)
+        if 0 <= todo_id < len(todos):
+            todos.pop(todo_id)
+            save_todos(todos)
+        return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(debug=True)
